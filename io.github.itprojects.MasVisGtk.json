@@ -1,7 +1,7 @@
 {
     "id" : "io.github.itprojects.MasVisGtk",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "46",
+    "runtime-version" : "47",
     "sdk" : "org.gnome.Sdk",
     "command" : "masvisgtk",
     "finish-args" : [
@@ -94,7 +94,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/itprojects/MasVisGtk.git",
-                    "commit": "ca8a88822c2f7a51be0274c71a2790bf5c80a7a3"
+                    "commit": "7b04824039ebe80c99ce2ddd1992293d2111ac21"
                 }
             ]
         }
