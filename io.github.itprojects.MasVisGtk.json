@@ -94,7 +94,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/itprojects/MasVisGtk.git",
-                    "commit": "ba3e068dbfadd58ba5e0d959dda5318e66395227"
+                    "commit": "a4ab73a4f762bd43f90a469b2cb56373d79cde0c"
                 }
             ]
         }
