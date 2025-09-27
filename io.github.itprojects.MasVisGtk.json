@@ -1,7 +1,7 @@
 {
     "id" : "io.github.itprojects.MasVisGtk",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "47",
+    "runtime-version" : "49",
     "sdk" : "org.gnome.Sdk",
     "command" : "masvisgtk",
     "finish-args" : [
@@ -39,8 +39,8 @@
             "sources":[
                 {
                 "type":"archive",
-                "url":"https://github.com/OpenMathLib/OpenBLAS/archive/refs/tags/v0.3.28.tar.gz",
-                "sha256":"f1003466ad074e9b0c8d421a204121100b0751c96fc6fcf3d1456bd12f8a00a1"
+                "url":"https://github.com/OpenMathLib/OpenBLAS/archive/refs/tags/v0.3.30.tar.gz",
+                "sha256":"27342cff518646afb4c2b976d809102e368957974c250a25ccc965e53063c95d"
                 }
             ]
         },
@@ -61,8 +61,8 @@
             "sources":[
                 {
                     "type":"archive",
-                    "url":"https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.12.0.tar.gz",
-                    "sha256":"eac9570f8e0ad6f30ce4b963f4f033f0f643e7c3912fc9ee6cd99120675ad48b"
+                    "url":"https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.12.1.tar.gz",
+                    "sha256":"2ca6407a001a474d4d4d35f3a61550156050c48016d949f0da0529c0aa052422"
                 }
             ]
         },
@@ -70,7 +70,8 @@
             "name": "qhull",
             "buildsystem": "cmake-ninja",
             "config-opts":[
-                "-DBUILD_STATIC_LIBS=OFF"
+                "-DBUILD_STATIC_LIBS=OFF",
+                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
             ],
             "sources": [
                 {
