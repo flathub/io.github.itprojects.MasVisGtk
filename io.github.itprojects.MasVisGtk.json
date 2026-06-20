@@ -1,32 +1,32 @@
 {
-    "id" : "io.github.itprojects.MasVisGtk",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "49",
-    "sdk" : "org.gnome.Sdk",
-    "command" : "masvisgtk",
-    "finish-args" : [
+    "id": "io.github.itprojects.MasVisGtk",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "50",
+    "sdk": "org.gnome.Sdk",
+    "command": "masvisgtk",
+    "finish-args": [
         "--share=ipc",
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland",
         "--filesystem=home"
     ],
-    "cleanup" : [
+    "cleanup": [
         "/include",
+        "/lib/cmake",
         "/lib/pkgconfig",
-        "/man",
+        "/lib/python3.*/*/*/tests",
+        "/lib/python3.*/*/*/*/tests",
         "/share/doc",
-        "/share/gtk-doc",
         "/share/man",
-        "/share/pkgconfig",
         "*.la",
         "*.a"
     ],
-    "modules" : [
+    "modules": [
         {
-            "name":"openblas",
-            "no-autogen":true,
-            "make-args":[
+            "name": "openblas",
+            "no-autogen": true,
+            "make-args": [
                 "DYNAMIC_ARCH=1",
                 "FC=gfortran",
                 "NO_CBLAS=1",
@@ -36,66 +36,66 @@
             "make-install-args": [
                 "PREFIX=/app"
             ],
-            "sources":[
+            "sources": [
                 {
-                "type":"archive",
-                "url":"https://github.com/OpenMathLib/OpenBLAS/archive/refs/tags/v0.3.30.tar.gz",
-                "sha256":"27342cff518646afb4c2b976d809102e368957974c250a25ccc965e53063c95d"
+                    "type": "archive",
+                    "url": "https://github.com/OpenMathLib/OpenBLAS/archive/refs/tags/v0.3.30.tar.gz",
+                    "sha256": "27342cff518646afb4c2b976d809102e368957974c250a25ccc965e53063c95d"
                 }
             ]
         },
         {
-            "name":"lapack",
-            "buildsystem":"cmake-ninja",
-            "builddir":true,
-            "cleanup":[
-                "/lib/cmake"
-            ],
-            "config-opts":[
+            "name": "lapack",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DBUILD_SHARED_LIBS=ON",
                 "-DBUILD_TESTING=OFF",
                 "-DLAPACKE=ON",
                 "-DCBLAS=ON"
             ],
-            "sources":[
+            "sources": [
                 {
-                    "type":"archive",
-                    "url":"https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.12.1.tar.gz",
-                    "sha256":"2ca6407a001a474d4d4d35f3a61550156050c48016d949f0da0529c0aa052422"
+                    "type": "archive",
+                    "url": "https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.12.1.tar.gz",
+                    "sha256": "2ca6407a001a474d4d4d35f3a61550156050c48016d949f0da0529c0aa052422"
                 }
             ]
         },
         {
             "name": "qhull",
             "buildsystem": "cmake-ninja",
-            "config-opts":[
+            "config-opts": [
                 "-DBUILD_STATIC_LIBS=OFF",
                 "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
             ],
+            "cleanup": [
+                "/bin"
+            ],
             "sources": [
                 {
-                "type": "archive",
-                "url": "https://github.com/qhull/qhull/archive/refs/tags/2020.2.tar.gz",
-                "sha256": "59356b229b768e6e2b09a701448bfa222c37b797a84f87f864f97462d8dbc7c5"
+                    "type": "archive",
+                    "url": "https://github.com/qhull/qhull/archive/refs/tags/2020.2.tar.gz",
+                    "sha256": "59356b229b768e6e2b09a701448bfa222c37b797a84f87f864f97462d8dbc7c5"
                 }
-            ],
-            "cleanup":[
-                "/bin",
-                "/share/man",
-                "/share/doc"
             ]
         },
         "python3-deps.json",
         {
-            "name" : "masvisgtk",
-            "builddir" : true,
-            "buildsystem" : "meson",
-            "sources" : [
+            "name": "masvisgtk",
+            "buildsystem": "meson",
+            "sources": [
                 {
-                    "type" : "git",
-                    "url" : "https://github.com/itprojects/MasVisGtk.git",
-                    "commit": "abcc2b7fee1a46340399d1a6caa96f63caf92b24"
+                    "type": "git",
+                    "url": "https://github.com/itprojects/MasVisGtk.git",
+                    "tag": "v6.0.2",
+                    "commit": "abcc2b7fee1a46340399d1a6caa96f63caf92b24",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^v([\\d.]+)$",
+                        "is-main-source": true
+                    }
                 }
             ]
         }
