@@ -343,11 +343,6 @@
             "build-commands": [
                 "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"matplotlib==3.11.0\" --no-build-isolation --config-settings=setup-args=\"-Dsystem-freetype=true\" --config-settings=setup-args=\"-Dsystem-qhull=true\""
             ],
-            "build-options": {
-                "build-args": [
-                    "--share=network"
-                ]
-            },
             "sources": [
                 {
                     "type": "file",

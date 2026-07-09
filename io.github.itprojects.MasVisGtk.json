@@ -4,6 +4,11 @@
     "runtime-version" : "50",
     "sdk" : "org.gnome.Sdk",
     "command" : "masvisgtk",
+    "build-options": {
+        "build-args": [
+            "--share=network"
+        ]
+    },
     "finish-args" : [
         "--share=ipc",
         "--socket=fallback-x11",
