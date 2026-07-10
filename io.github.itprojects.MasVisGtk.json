@@ -91,16 +91,11 @@
             "name" : "masvisgtk",
             "builddir" : true,
             "buildsystem" : "meson",
-            "build-options": {
-                "build-args": [
-                    "--share=network"
-                ]
-            },
             "sources" : [
                 {
                     "type" : "git",
                     "url" : "https://github.com/itprojects/MasVisGtk.git",
-                    "commit": "ee581868456dbecee0517895e232a8e0aa4e3f99"
+                    "commit": "ab3fd9172d89d90c001204473c6495237f308d1e"
                 }
             ]
         }
