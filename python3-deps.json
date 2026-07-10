@@ -338,50 +338,10 @@
             ]
         },
         {
-            "name": "harfbuzz",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dgraphite2=enabled",
-                "-Dintrospection=disabled"
-            ],
-            "build-options": {
-                "env": {
-                    "CFLAGS": "-O2 -pipe",
-                    "CXXFLAGS": "-O2 -pipe",
-                    "LDFLAGS": "-Wl,--as-needed"
-                }
-            },
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/harfbuzz/harfbuzz/releases/download/14.1.0/harfbuzz-14.1.0.tar.xz",
-                    "sha256": "ee0eb3a1da2c5a28147f12dff55f6c7d60aeeeb29ac7ef334eabe84c8476c105"
-                }
-            ]
-        },
-        {
-            "name": "libraqm",
-            "buildsystem": "meson",
-            "config-opts": [
-                "--prefix=/app",
-                "--libdir=/app/lib"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/HOST-Oman/libraqm.git",
-                    "tag": "v0.10.5"
-                }
-            ],
-            "cleanup": [
-                "/include"
-            ]
-        },
-        {
             "name": "python3-matplotlib",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"matplotlib==3.11.0\" --no-build-isolation --config-settings=setup-args=\"-Dsystem-freetype=true\" --config-settings=setup-args=\"-Dsystem-qhull=true\" --config-settings=setup-args=\"-Dsystem-libraqm=true\""
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"matplotlib==3.11.0\" --no-build-isolation --config-settings=setup-args=\"-Dsystem-freetype=true\" --config-settings=setup-args=\"-Dsystem-qhull=true\""
             ],
             "sources": [
                 {
